@@ -2,8 +2,8 @@ namespace InternshipTest.Person
 {
     public class Student
     {
-        public string Name { get; set; } 
-        public Knowledge Knowledge { get; set; }
+        public string Name { get; private set; } 
+        public Knowledge Knowledge { get; private set; }
         public Student(string name, Knowledge knowledge)
         {
             this.Name = name;
