@@ -18,16 +18,20 @@ namespace InternshipTest.Institution.InterLink
 
         public void AddStudent(University university)
         {
-            var goodStudentsFromUniversity = university.GetGoodStudents();
-            students.AddRange(goodStudentsFromUniversity);
+            var avg = university.getAvg();
+            foreach(var student in university.Students)
+            {
+                if (student.Knowledge.Level > avg)
+                {
+                    students.Add(student);
+                    listOfInterns.Append(student.Name + "\n");
+                }
+            }
+
         }
 
         public string GetStudents()
         {
-            foreach(var student in students)
-            {
-                listOfInterns.Append(student.Name + "\n");
-            }
             return listOfInterns.ToString();
         }
     }
